@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Store Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Inventory Store Manager</h1>
+      <p class="subtitle">Lab 5 — Interactive DOM Application</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Add New Product</h2>
+        <form id="add-product-form" novalidate>
+          <div class="form-group">
+            <label for="prod-name">Product Name</label>
+            <input type="text" id="prod-name" placeholder="e.g. Mechanical Keyboard" />
+            <span class="error-message" id="err-name"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prod-price">Price ($)</label>
+              <input type="number" id="prod-price" step="0.01" placeholder="e.g. 49.99" />
+              <span class="error-message" id="err-price"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="prod-qty">Quantity</label>
+              <input type="number" id="prod-qty" step="1" placeholder="e.g. 2" />
+              <span class="error-message" id="err-qty"></span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="table-header">
+          <h2>Product Inventory</h2>
+          <div class="total-badge">
+            Total Valuation: $<span id="store-total">0.00</span>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="product-list">
+            </tbody>
+          </table>
+          <p id="empty-state" class="empty-state">No products in inventory. Add one above!</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
