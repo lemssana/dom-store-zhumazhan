@@ -67,52 +67,22 @@ In accordance with Lab 5 requirements, event handling is structured around **mem
 1. **`submit` Event on Form:**
 Instead of using standard form submission which reloads the browser, the `submit` event is intercepted using `preventDefault()`. This allows running custom JavaScript validation logic dynamically and updating the DOM in-place.
 2. **Event Delegation on `<tbody>` (`#product-list`):**
-Rather than attaching individual `click` event listeners to every single `+`, `-`, and `Delete` button across all table rows (which degrades performance and creates memory leak risks when rows are frequently created/removed), a single `click` event listener is attached to the parent `<tbody>`. When a user clicks a button, the event bubbles up to `<tbody>`, where `e.target.dataset.action` identifies the intended action and invokes `store.updateQty()` or `store.remove()`.
+Rather than attaching individual `click` event listeners to every single `+`, `-`, and `Delete` button across all table rows, a single `click` event listener is attached to the parent `<tbody>`. When a user clicks a button, the event bubbles up to `<tbody>`, where `e.target.dataset.action` identifies the intended action and invokes `store.updateQty()` or `store.remove()`.
 3. **Inline Validation without `alert()`:**
-Form validation errors (empty product name, invalid or negative price, non-integer quantity) are displayed directly in dedicatedДля README по Лабораторной работе №4 идеально подойдет стандартная профессиональная структура. Она сразу показывает функционал и архитектуру проекта.
+Form validation errors (empty product name, invalid or negative price, non-integer quantity) are displayed directly in dedicated error spans in the DOM without modal popups.
 
-### Структура README.md
-
-```markdown
-# Лабораторная работа №4
-
-Краткое описание проекта в одно-два предложения: какую задачу решает и какой стек используется.
-
-## Технологический стек
-* Python / Pandas / Scikit-learn
-* [Другие технологии/библиотеки]
-
-## Архитектура и структура
-* `data/` — исходные и обработанные датасеты
-* `src/` — исходный код (скрипты предобработки, обучения и оценки)
-* `notebooks/` — Jupyer-ноутбуки с экспериментами
-* `main.py` — точка входа для запуска пайплайна
-
-## Установка и запуск
-
-1. Клонирование репозитория:
-   git clone <URL_репозитория>
-   cd <название_папки>
-
-2. Установка зависимостей:
-   pip install -r requirements.txt
-
-3. Запуск проекта:
-   python main.py
-
-## Результаты работы
 ---
 
 ## 5. Application Interface & Validation Proof
 
 ### Product Inventory View
-![DOM Store Interface](screenshot1.png)
 
 ### Inline Form Validation
-![Inline Form Validation Errors](screenshot2.png)
 
 ---
 
 ## 6. AI Tools Disclosure
 
-- **Gemini / ChatGPT:** Assisted in designing modern CSS variables, structuring event delegation patterns, and formatting comprehensive technical markdown documentation.
+* **Gemini / ChatGPT:** Assisted in designing modern CSS variables, structuring event delegation patterns, and formatting technical documentation.
+
+```
