@@ -77,8 +77,15 @@ Form validation errors (empty product name, invalid or negative price, non-integ
 
 ### Product Inventory View
 
+
+
+![Product Inventory View](screenshot1.png)
+
+
+
 ### Inline Form Validation
 
+![Inline Form Validation](screenshot2.png)
 ---
 
 ## 6. AI Tools Disclosure
